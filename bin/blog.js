@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-var program = require('commander'),
-	preview = require('../lib/preview');
+let program = require('commander'),
+  preview = require('../lib/preview'),
+  build = require('../lib/build');
 
 program.version('1.0.0');
 
@@ -20,7 +21,10 @@ program.command('help')
 
 
 program.command('preview')
-		.action(preview);
+    .action(preview);
+    
+program.command('build')
+    .action(build);
 
 
 program.parse(process.argv);
